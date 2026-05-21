@@ -12,7 +12,7 @@ export const projects = [
   {
     title: 'Libro de los Juegos',
     description:
-      'Game website that allows users to play real medieval games with other users in real time.',
+      'Game website that allows users to play real medieval table games with other users in real time.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Websockets'],
     image: `${import.meta.env.BASE_URL}projects/libro.png`,
     imageAlt: 'Screenshot of the Libro de los Juegos web application',
@@ -22,16 +22,18 @@ export const projects = [
   {
     title: 'YOLO V1 Image Classifier',
     description:
-      'A simple image classifier using the YOLO V1 algorithm. It is able to classify mammal species from images.',
+      'An experiment in computer vision using variations of the YOLO V1 algorithm to classify mammal species from images.',
     tech: ['Python', 'PyTorch', 'OpenCV'],
+    image: `${import.meta.env.BASE_URL}projects/YOLO.png`,
+    imageAlt: 'Screenshot of the YOLO V1 Image Classifier results',
     liveUrl: null,
     repoUrl: 'https://github.com/DanielRJilek/YOLO-V1-Classifier',
   },
   {
     title: 'Realtime Object Recognition',
     description:
-      'A realtime object recognition system using the classical computer vision approach. It is able to detect objects in real time and classify them into 20 different classes.',
-    tech: ['Python', 'OpenCV'],
+      'A realtime object recognition system using classical computer vision techniques. It can be trained to recognize new objects by providing a dataset of images and their corresponding labels.',
+    tech: ['C++', 'OpenCV'],
     liveUrl: null,
     repoUrl: 'https://github.com/DanielRJilek/RealtimeObjectRecognition',
   },

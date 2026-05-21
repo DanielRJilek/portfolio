@@ -1,4 +1,4 @@
-import { skills } from '../../data/site'
+import { skillGroups } from '../../data/site'
 import './Skills.css'
 
 export default function Skills() {
@@ -11,13 +11,20 @@ export default function Skills() {
       <h2 className="section__title" id="skills-heading">
         Skills
       </h2>
-      <ul className="skills__list">
-        {skills.map((skill) => (
-          <li key={skill} className="skills__item">
-            {skill}
-          </li>
+      <div className="skills__groups">
+        {skillGroups.map((group) => (
+          <div key={group.title} className="skills__group">
+            <h3 className="skills__group-title">{group.title}</h3>
+            <ul className="skills__list">
+              {group.skills.map((skill) => (
+                <li key={skill} className="skills__item">
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

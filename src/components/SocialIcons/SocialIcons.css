@@ -1,0 +1,27 @@
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.social-icons__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: var(--text-h);
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.social-icons__link:hover,
+.social-icons__link:focus-visible {
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.social-icons__icon {
+  width: 28px;
+  height: 28px;
+}

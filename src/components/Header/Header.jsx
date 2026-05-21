@@ -16,6 +16,18 @@ export default function Header() {
               </a>
             </li>
           ))}
+          {site.resumeUrl && (
+            <li>
+              <a
+                className="header__link"
+                href={site.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

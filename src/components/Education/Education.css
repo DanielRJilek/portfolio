@@ -1,0 +1,85 @@
+.education__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.education__item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.education__logo {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.education__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.education__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.education__school {
+  margin: 0;
+  font-family: var(--heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.education__dates {
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .education__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .education__dates {
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+.education__detail {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-h);
+}
+
+.education__location {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}

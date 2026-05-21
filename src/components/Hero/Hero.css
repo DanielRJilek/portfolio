@@ -37,32 +37,7 @@
 }
 
 .hero__social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
   margin-top: 4px;
-}
-
-.hero__social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  color: var(--text-h);
-  border-radius: 8px;
-  transition: color 0.2s, background 0.2s;
-}
-
-.hero__social-link:hover,
-.hero__social-link:focus-visible {
-  color: var(--accent);
-  background: var(--accent-bg);
-}
-
-.hero__social-icon {
-  width: 28px;
-  height: 28px;
 }
 
 .hero__actions {
