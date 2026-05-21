@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.section,
+.hero {
+  scroll-margin-top: var(--header-offset);
+}
+
 .section {
   padding: 48px 24px;
   text-align: left;
