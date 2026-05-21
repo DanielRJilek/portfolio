@@ -1,16 +1,49 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal software developer portfolio — static React site built with [Vite](https://vite.dev/) and hosted on [GitHub Pages](https://pages.github.com/).
 
-Currently, two official plugins are available:
+**Live site:** `https://<your-github-username>.github.io/portfolio/`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Local development
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open the URL shown in the terminal (usually `http://localhost:5173/portfolio/`).
 
-## Expanding the ESLint configuration
+## Production preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Build and preview the same output GitHub Pages serves:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Customize content
+
+Edit these files — no component changes needed for copy updates:
+
+- [`src/data/site.js`](src/data/site.js) — name, bio, skills, nav, email, social links
+- [`src/data/projects.js`](src/data/projects.js) — project cards
+
+Update [`index.html`](index.html) `<title>` and meta description to match your name.
+
+## Deploy
+
+Pushes to `main` trigger [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds `dist/` and deploys to GitHub Pages.
+
+**One-time setup:** In the repo on GitHub, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
+
+This repo uses a **project site** URL (`/portfolio/`). [`vite.config.js`](vite.config.js) sets `base: '/portfolio/'` to match the repository name.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server with HMR |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |

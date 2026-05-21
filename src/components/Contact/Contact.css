@@ -1,0 +1,46 @@
+.contact__lead {
+  max-width: 36rem;
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.contact__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.contact__btn--primary {
+  color: #fff;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.contact__btn--primary:hover,
+.contact__btn--primary:focus-visible {
+  filter: brightness(1.08);
+}
+
+.contact__btn--secondary {
+  color: var(--text-h);
+  background: var(--accent-bg);
+  border: 2px solid var(--accent-border);
+}
+
+.contact__btn--secondary:hover,
+.contact__btn--secondary:focus-visible {
+  border-color: var(--accent);
+}
