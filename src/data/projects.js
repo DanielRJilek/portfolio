@@ -34,6 +34,8 @@ export const projects = [
     description:
       'A realtime object recognition system using classical computer vision techniques. It can be trained to recognize new objects by providing a dataset of images and their corresponding labels.',
     tech: ['C++', 'OpenCV'],
+    image: `${import.meta.env.BASE_URL}projects/realtimeObjectRecognition.png`,
+    imageAlt: 'Screenshot of the Realtime Object Recognition system',
     liveUrl: null,
     repoUrl: 'https://github.com/DanielRJilek/RealtimeObjectRecognition',
   },

@@ -1,11 +1,11 @@
-.contact__lead {
-  max-width: 36rem;
-  margin: 0 auto 24px;
-  font-size: 1.05rem;
-  line-height: 1.6;
+.contact.section {
   text-align: center;
 }
 
-.contact.section {
-  text-align: center;
+.contact__lead {
+  max-width: 32rem;
+  margin: 0 auto 28px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
 }

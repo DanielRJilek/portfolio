@@ -2,26 +2,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 8px;
 }
 
 .social-icons__link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 10px;
   color: var(--text-h);
-  border-radius: 8px;
-  transition: color 0.2s, background 0.2s;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 .social-icons__link:hover,
 .social-icons__link:focus-visible {
   color: var(--accent);
-  background: var(--accent-bg);
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
 }
 
 .social-icons__icon {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
