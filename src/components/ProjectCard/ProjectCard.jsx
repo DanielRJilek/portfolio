@@ -1,37 +1,70 @@
+import { useEffect, useState } from 'react'
 import './ProjectCard.css'
 
+const SLIDE_INTERVAL_MS = 4000
+
 export default function ProjectCard({ project }) {
-  const { title, description, tech, image, imageAlt, liveUrl, repoUrl } =
+  const { title, description, tech, image, images, imageAlt, liveUrl, repoUrl } =
     project
 
+  const slides = images ?? (image ? [image] : [])
+  const hasImage = slides.length > 0
+  const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  useEffect(() => {
+    if (slides.length <= 1 || paused) return
+
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % slides.length)
+    }, SLIDE_INTERVAL_MS)
+
+    return () => clearInterval(id)
+  }, [slides.length, paused])
+
   const mediaClassName = `project-card__media${
-    image ? '' : ' project-card__media--placeholder'
+    hasImage ? '' : ' project-card__media--placeholder'
   }`
 
-  const mediaContent = image ? (
-    <img
-      className="project-card__image"
-      src={image}
-      alt={imageAlt ?? `${title} screenshot`}
-      loading="lazy"
-    />
+  const mediaContent = hasImage ? (
+    <div className="project-card__slideshow">
+      {slides.map((src, i) => (
+        <img
+          key={src}
+          className={`project-card__image${
+            i === index ? ' project-card__image--active' : ''
+          }`}
+          src={src}
+          alt={imageAlt ?? `${title} screenshot`}
+          loading={i === 0 ? 'lazy' : 'eager'}
+          aria-hidden={i !== index}
+        />
+      ))}
+    </div>
   ) : null
 
+  const pauseHandlers = {
+    onMouseEnter: () => setPaused(true),
+    onMouseLeave: () => setPaused(false),
+  }
+
   const media =
-    liveUrl && image ? (
+    liveUrl && hasImage ? (
       <a
         className={mediaClassName}
         href={liveUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Open live demo: ${title}`}
+        {...pauseHandlers}
       >
         {mediaContent}
       </a>
     ) : (
       <div
         className={mediaClassName}
-        aria-hidden={!image ? true : undefined}
+        aria-hidden={!hasImage ? true : undefined}
+        {...pauseHandlers}
       >
         {mediaContent}
       </div>
